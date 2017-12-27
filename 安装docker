@@ -1,0 +1,13 @@
+> EOF
+[dockerrepo]
+name=Docker Repository
+baseurl=http://yum.dockerproject.org/repo/main/centos/$releaserver/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+yum update
+yum -y install docker-engine
+
+第二种方法
+yum  yum install epel-release-7
+yum -y install docker-io
