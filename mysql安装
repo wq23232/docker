@@ -22,7 +22,27 @@ chown -R /usr/local/data
 cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DMYSQL_DATADIR=/usr/local/data -DSYSCONFDIR=/etc -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_ARCHIVE_STORAGE_ENGINE=1 -DWITH_BLACKHOLE_STORAGE_ENGINE=1 -DWITH_READLINE=1 -DWITH_LIBWRAP=0 -DMYSQL_UNIX_ADDR=/tmp/mysql.sock -DWITH_SSL=system -DWITH_ZLIB=system -DWITH_BOOST=/usr/local/boost_1_59_0  -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci
 make 
 make install
+cp mysql.server /etc/init.d/mysqld
+cp my-default.cnf /etc/my.cnf
 初始化数据库
+mysqld --initialize-insecure --user=mysql --basedir=/usr/local/mysql --datadir=/var/mysql/data  
+编辑环境变量
+vim /etc/profile
+export path=:$path:/usr/local/mysql/bin
+source  /etc/profile
+启动数据库
+/etc/init.d/mysqld start
+进入数据库
+mysql -uroot -p
+
+
+
+
+
+
+
+
+
 
 
 
