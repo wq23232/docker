@@ -34,34 +34,6 @@ source  /etc/profile
 /etc/init.d/mysqld start
 进入数据库
 mysql -uroot -p
-
-
-更改配置文件
-
-shell> tar -zxvf ./mysql-5.7.9.tar.gz
-shell> cd ./mysql-5.7.9
-shell> cmake \
--DCMAKE_INSTALL_PREFIX=/data/mysql \
--DSYSCONFDIR=/data/mysql/ \
--DMYSQL_DATADIR=/data/mysqlData/ \
--DMYSQL_UNIX_ADDR=/tmp/mysql.sock \
--DMYSQL_TCP_PORT=3306 \
--DEXTRA_CHARSETS=all \
--DDEFAULT_CHARSET=utf8 \
--DDEFAULT_COLLATION=utf8_general_ci \
--DWITH_READLINE=1 \
--DENABLED_LOCAL_INFILE=1 \
--DWITH_MYISAM_STORAGE_ENGINE=1 \
--DWITH_INNOBASE_STORAGE_ENGINE=1 \
--DWITH_PARTITION_STORAGE_ENGINE=1 \
--DWITH_MEMORY_STORAGE_ENGINE=1 \
--DWITH_BOOST=/usr/local/boost
-shell> make -j `grep processor /proc/cpuinfo | wc -l`
-shell> make install
-*比较耗系统资源 配置低编译可能会很慢*
-
-#初始化数据库
-
 #创建配置文件 根据实际使用情况修改 仅供参考
 cat > /data/mysql/my.cnf << EOF
 [client]
