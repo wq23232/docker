@@ -1,1 +1,87 @@
+apache 安装
+依赖条件安装
+yum install make apr* autoconf automake gcc gcc-c++ zlib-devel openssl 
+openssl-devel pcre-devel gd kernel keyutils patch perl kernel-headers compat* mpfr 
+cpp glibc libgomp libstdc++-devel ppl cloog-ppl keyutils-libs-devel libcom_err-devel
+libsepol-devel libselinux-devel krb5-devel zlib-devel libXpm* freetype libjpeg* 
+libpng* php-common php-gd ncurses* libtool* libxml2 libxml2-devel patch
+下载软件
+wget http://oss.aliyuncs.com/aliyunecs/onekey/apache/apr-1.5.0.tar.gz
+wget http://oss.aliyuncs.com/aliyunecs/onekey/apache/apr-util-1.5.3.tar.gz
+wget http://zy-res.oss-cn-hangzhou.aliyuncs.com/pcre/pcre-8.38.tar.gz
+wget http://zy-res.oss-cn-hangzhou.aliyuncs.com/apache/httpd-2.4.23.tar.gz
+安装apr apr-util http pcre
+tar -xzf apr-1.5.0.tar.gz
+cd apr-1.5.0.tar.gz
+./configure --prefix=/usr/local/apr
+make && make install
+tar -xzf apr-util-1.5.3.tar.gz
+cd apr-util-1.5.3
+./configure --prefix=/usr/local/apr-util --with-apr=/usr/local/apr
+tar -xzf pcre-8.38.tar.gz
+cd pcre-8.38
+./configure --prefix=/usr/local/pcre
+make && make install
+tar -zxf httpd-2.4.23.tar.gz
+cd httpd-2.4.23
+./configure --prefix=/usr/local/apache --enable-so --enable-cgi --enable-rewrite --with-zlib --with-pcre=/usr/local/pcre --with-apr=/usr/local/apr --with-apr-util=/usr/local/apr-util --enable-mods-shared=most --enable-mpms-shared=all --with-mpm=event
+make && make install
+配置apache 文档
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
