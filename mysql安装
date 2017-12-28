@@ -1,0 +1,54 @@
+配置环境
+yum -y install gcc cmake make gcc-c++ ncurses-devel openssl-devel bison ncurses chkconfig lsof 
+卸载老版本
+rpm -qa |  grep mysql
+rpm -qa | grep mariadb
+rpm -e --nodeps 老版本
+下载boost 
+wget https://sourceforge.net/projects/boost/files/boost/1.59.0/boost_1_59_0.tar.gz 
+tar -xzf boost_1_59_0.tar.gz -C/usr/local
+下载mysql
+wget http://mirrors.sohu.com/mysql/MySQL-5.7/mysql-5.7.17.tar.gz
+tar -xzf mysql-5.7.17.tar.gz
+创建用户
+groupadd mysql
+useradd -s /sbin/nologin -g mysql mysql
+创建目录
+mkdir -p /usr/local/mysql
+mkdir -p /usr/local/data
+chown -R /usr/local/mysql
+chown -R /usr/local/data
+编译安装
+cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DMYSQL_DATADIR=/usr/local/data -DSYSCONFDIR=/etc -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_ARCHIVE_STORAGE_ENGINE=1 -DWITH_BLACKHOLE_STORAGE_ENGINE=1 -DWITH_READLINE=1 -DWITH_LIBWRAP=0 -DMYSQL_UNIX_ADDR=/tmp/mysql.sock -DWITH_SSL=system -DWITH_ZLIB=system -DWITH_BOOST=/usr/local/boost_1_59_0  -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci
+make 
+make install
+初始化数据库
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
