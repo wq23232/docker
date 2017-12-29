@@ -203,7 +203,42 @@ update mysql.user SET PASSWORD=PASSWORD("新密码") where user='用户'and host
 flush privileges
 grant usage on 数据库.表 to '用户名'@'主机名'identififd  by  '新密码'
 flush privileges
-权限管理
+备份与恢复
+mysqldump -u 用户 -p 密码 数据库 >  文件名 整个数据库进行备份
+mysqldump -u 用户 -p 密码 数据库 表名 > 文件名
+mysql -u user -p 数据库名 > 恢复文件
+数据库迁移
+mysqldump -h 发送主机名 -uroot -p密码 数据库名 | mysql -h 接收方主机名 -uroot -p密码
+表的导出和导入
+导出
+select * from 表  into outfile '文件名'
+fields
+terminated by','
+enclosed by'\'
+escaped by '\'
+terminated by '\r\n';
+mysqldunp  -T 文件名 数据库 表名 -u root -p 
+
+mysql -u -root -p --execute="sql语句" 数据库名 > 文件名
+导入本地文件
+load data infile '数据' into table 表名 
+mysqllimport -u  root -p 数据库  文件名
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
