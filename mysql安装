@@ -132,9 +132,135 @@ sort_buffer_size = 8M
 read_buffer = 4M
 write_buffer = 4M
 EOF
-数据库认识
+数据库基本操作
+1.创建数据库
+查看数据库 show databases;
+创建数据库  create database test_db;
+删除数据库 drop database test_db;
 存储引擎
-1.
+1.数据库引擎
+InnoDB 事务型引擎  支持巨大数据量的性能设计
+mylsam  较高的插入和查询速度
+memory 快速访问
+查看默认引擎 show variables like 'storage_engine'\g
+用户管理
+主要在mysql这个库中的user  db  host  tables_priv columns——priv  procs_priv
+user 表字段针对所有数据库
+user host  password  为联合主键  
+db表字段针对单个数据库数据表
+table_priv   表权限控制 
+host  主机名
+db    数据库名
+table_name 表名
+grantor  修改用户
+timestamp   操作时间
+table_priv 表操作权限
+columvs_priv 记录操作权限
+columns_priv  列操作权限
+host  主机名
+db    数据库名
+table_name 表名
+grantor  修改用户
+timestamp   操作时间
+columvs_priv 记录操作权限
+procs_priv  存储操作权限
+host 主机名
+db   数据库名
+user   用户名
+routine_name  
+routine_type 存储类型
+grantor   修改用户
+proc_priv 拥有权限
+timestamp  更新时间
+用户管理
+登陆选项
+mysql 
+-h 主机名
+-u 用户名
+-p 密码
+-P 端口号
+数据库名
+-e sql语句
+创建新用户
+第一种 craete user 语句创建用户
+create user '用户名'@'主机名'  identififd  by  '密码'
+第二种 grant语句创建用户
+grant 权限  on  数据库.表  to  '用户'@'主机名'identififd  by  '密码'；
+删除普通用户
+drop user '用户名'@'主机名'删除本地登陆权限
+drop user   删除所有授权表权限记录
+delete from mysql.uesr where host='主机名'and user '用户名'
+修改用户密码
+root用户修改密码
+mysqladmin -u 用户名  -p password '新密码'
+update mysql.user set Password=PASSWORD("新密码"）where user="root"and host="localhost";
+flush privileges
+set PASSWORD="新密码"；
+flush privileges
+ROOT用户修改普通用户密码
+set PASSWORD for '用户'@'主机名'=PASSWORD"新密码"；
+update mysql.user SET PASSWORD=PASSWORD("新密码") where user='用户'and host='主机名'
+flush privileges
+grant usage on 数据库.表 to '用户名'@'主机名'identififd  by  '新密码'
+flush privileges
+权限管理
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 2.
 3.
 数据 
