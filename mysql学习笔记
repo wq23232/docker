@@ -248,6 +248,33 @@ mysqlbinlog  文件名 |mysql -u 用户 -p 密码
 记录查询时长超过指定时间的日志
 log-slow-queries= 路径/文件
 long-query_time=n 表示超过这个时间都存储在慢查询日志中
+数据库复制
+主从复制
+第一授权：将从数据库的账户授权给主数据库
+第二开启binlog：主从数据库都开启binlog
+第三在从数据库设置   change master to
+                 master_host="主ip地址"
+                 master_user="授权用户"
+                 master_password="密码"
+                 master_log_file="主库二进制日志文件名"
+                 master_log_pos="位置码"
+                 
+  查看状态  show slave status
+  切换主从服务器
+  第一步检查是否全部更新
+  show processlist
+  在从库种停止状态
+  stop slave
+  重新建立二进制日志
+ 重复主从数据库建立过程
+ 
+  
+
+
+
+
+
+
 
 
 
