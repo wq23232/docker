@@ -115,6 +115,55 @@ lgwr（日志写进程）：将重做日志缓冲区写到重做日志文件之�
 arch（归档日志进程）：该进程把写满重做日志文件的数据写到一个归档日志中作为数据库恢复
 checkpoint process ：校验点发生时会触发这个进程进行一系列工作
 sql语言概述：
+   1.数据操纵语言（DML）
+   INSERT :插入
+   UPDATE:更新
+   DELETE:删除
+   2.数据定义语句
+   create：创建
+   alter：改变系统参数
+   drop：删除对象
+   rename：重命名
+   truncate:截断一个表
+   事务控制语句
+   commit:提交dml的事务
+   rollback：用于回滚dml语句
+   数据控制语句
+   grant：授权
+   revoke：回收权限
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
         
 
                                                      
