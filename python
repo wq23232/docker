@@ -3,7 +3,6 @@
 
 Python介绍
 发展史
-	被解救的姜戈
 	2.4  50万行
 	Python 2.6 - October 1, 2008 
 	Python 2.6.1 - October 1, 2008 
@@ -251,6 +250,272 @@ del 表名[元素位置]
  reversed():倒转位置
 enumerate():生成二元数组
 zip():生产多元数组
+函数
+创建函数def 名称():
+def discount(price,rate):/*定义函数名
+    final_price = price * rate /* 函数过程
+    return final_price /* 函数返回值
+old_price = float(input('请输入原价:'))
+rate = float(input('请输入折扣：'))
+new_price = discount(old_price,rate) /*调用函数
+print('价格是：',new_price)
+全局变量：整个函数起做用的变量
+局部变量：函数内部的起作用的变量
+global ：标志全球变量
+内嵌函数：函数内部内嵌个函数
+闭包：
+匿名函数：不需要定义函数使用关键字lambda
+bif
+filter:过滤真值
+map：：进行迭代
+迭代：自己调用自己本身
+
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n*factorial(n-1)
+    number= int(input('qingshuruyigezhengshu:'))
+    result = factorial(number)
+    print("%d dejiecheng:%d"% (number,result))
+
+斐波那契数列：
+def fab(n):
+    a1 = 1
+    a2 = 1
+    a3 = 1
+    if n < 1:
+        print('输入有误请重新输入：')
+        return -1
+    while (n - 2) > 0:
+        a3 = a1 + a2
+        a1 = a2
+        a2 = a3
+        n -= 1
+        return a3
+   # n=int(input('请输入一个数：'))
+    #result = fab(n)
+    #print(result)
+    result = fab(20)
+    if result != -1:
+        print('总共有%d' % result)
+
+迭代：
+def fab(n):
+    if n < 1:
+        print('输入有误！')
+        return -1
+    if n == 1 or n == 2:
+        return 1
+    else:
+        return fab(n-1)+ fab(n-2)
+    result = fab(20)
+    if result != -1:
+        print('总共有%d对兔子' % result)
+	
+汉诺塔：
+
+def hanoi(n,x,y,z):
+    if n == 1:
+        print(x,'-->',z)
+    else:
+        hanoi(n-1,x,y,z)
+        print(x,'-->',z)
+        hanoi(n-1,y,x,z)
+n = int(input('请输入汉诺塔：'))
+hanoi(n,'X','Y','Z')
+字典：python 中唯一映射的类型 
+创建字典：字典名 = {元素}
+内置函数：fromkes():创建一个并返回一个新的字典包括字典的位置和值
+     fronkes((1),123)
+         key():返回字典的值
+	 values() 返回字典中所有值
+	 items():所有项
+	 get() 访问字典位置
+	 clear：清空字典
+	 copy:复制字典
+	 pop:弹出对应值
+	 
+	 
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
