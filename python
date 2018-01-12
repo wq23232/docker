@@ -335,8 +335,21 @@ hanoi(n,'X','Y','Z')
 	 clear：清空字典
 	 copy:复制字典
 	 pop:弹出对应值
-	 
-	 
+异常处理：
+       1.断言语句失败
+       assertion
+       2.未知对象属性
+       attributeerror
+       3.indexerror
+        索引超出范围
+       4.keyERROR
+       字典查找一个不存在的关键字
+       5.nameerror
+        访问一个不存在的变量
+       类和对象
+      对象：把数据和代码封装到一起
+      
+       
      
 
 
