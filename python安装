@@ -1,0 +1,12 @@
+Linux下安装python
+依赖环境 yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel 
+readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
+先下载安装包
+https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tgz
+https://pypi.python.org/packages/source/s/setuptools/setuptools-19.6.tar.gz#md5=c607dd118eae682c44ed146367a17e26
+https://pypi.python.org/packages/source/p/pip/pip-8.0.2.tar.gz#md5=3a73c4188f8dbad6a1e6f6d44d117eeb
+解压安装
+tar -xzf Python-3.6.4.tgz
+tar -zxf setuptools-19.6.tar.gz
+tar -xzf pip-8.0.2.tar.gz
+cd  Python
