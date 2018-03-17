@@ -22,3 +22,12 @@ egrep -v "#|^$" nginx.conf.default >nginx.conf
 /app/nginx/sbin/nginx
 装mysql
 https://github.com/wq23232/docker/blob/master/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0
+按照php
+yum install zlib-devel libxml2-devel libjpeg-devel libjpeg-turbo-devel libiconv-devel freetype-devel libpng-devel gd-devel libcurl-devel libxslt-devel libxslt-devel -y
+http://mirrors.sohu.com/php/php-5.4.32.tar.gz
+tar -zxf php*
+./configure --prefix=/app/php-5 --with-mysql=mysqlnd --with-iconv-dir=/usr/local/libiconv --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --with-libxml-dir --enable-xml --disable-rpath --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --with-curl --enable-mbregex --enable-fpm --enable-mbstring --with-mcrypt --with-gd --enable-gd-native-ttf --with-openssl --with-mhash --enable-pcntl --enable-sockets --with-xmlrpc --enable-soap --enable-short-tags --enable-static --with-xsl --with-fpm-user=www --with-fpm-group=www --enable-ftp --enable-opcache=no
+cp php.ini-production /application/php/lib/php.ini
+cp php-fpm.conf.default php-fpm.conf
+/application/php/sbin/php-fpm 
+编辑nignx文件
