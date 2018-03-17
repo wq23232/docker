@@ -1,1 +1,23 @@
-
+安装nginx
+依赖条件：
+yum install -y pcre-devel openssl-devel gcc gcc-c++  autoconf libtool
+下载软件
+wget http://nginx.org/download/nginx-1.10.2.tar.gz
+创建用户
+groupadd www
+useradd -s /sbin/nologin -g www www
+创建文件夹
+mkdir /app
+解压文件
+tar -xzf nginx-1.10.2.tar.gz 
+编译安装
+cd  Nginx
+./configure --prefix=/app/nginx-1.10.2 --user=www --group=www --with-http_stub_status_module --with-http_ssl_module
+make && make install
+连接文件夹
+ln -s /app/nginx-1.10.2/ /app/nginx
+简化配置文件
+egrep -v "#|^$" nginx.conf.default >nginx.conf
+启动nginx
+/app/nginx/sbin/nginx
+装mysql
