@@ -4,7 +4,7 @@ http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f95
 解压
 tar -xzf  jdk-9.0.4_linux-x64_bin.tar.gz
 配置环境变量
-export JAVA_HOME=/usr/java/jdk-9.0.1
+export JAVA_HOME=/usr/local/jdk/jdk-9.0.4
 export CLASSPATH=$JAVA_HOME/lib/
 export PATH=$PATH:$JAVA_HOME/bin
 export PATH JAVA_HOME CLASSPATH
@@ -15,3 +15,32 @@ source /etc/profile
 http://mirrors.hust.edu.cn/apache/tomcat/tomcat-9/v9.0.6/bin/apache-tomcat-9.0.6.tar.gz
 解压
 tar -xzf apache-tomcat-9.0.6.tar.gz
+目录介绍
+ bin：存放管理脚本
+ startup.sh:启动脚本
+ shutdown.sh：停止脚本
+ 
+ conf：配置文件
+ server.xml：主配置文件
+ tomcat-users.xml:用户配置文件
+ lib：web应用调用jar包
+
+ logs： 日志存放目录
+ NOTICE：
+ RELEASE-NOTES
+ RUNNING.txt
+ temp： 存放临时文件
+ webapps：web程序目录
+ docs：帮助文档
+ example：应用实例
+ host-manager：主机管理
+ manager：管理
+ root：默认战斗根目录
+ 
+ work：存放编译产生的java
+ 
+
+
+
+
+
