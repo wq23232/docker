@@ -1,0 +1,13 @@
+安装jdk
+下载jdk
+http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_linux-x64_bin.tar.gz?AuthParam=1521348807_0c821d2b45af105dc32ca34151870cdf
+解压
+tar -xzf  jdk-9.0.4_linux-x64_bin.tar.gz
+配置环境变量
+export JAVA_HOME=/usr/java/jdk-9.0.1
+export CLASSPATH=$JAVA_HOME/lib/
+export PATH=$PATH:$JAVA_HOME/bin
+export PATH JAVA_HOME CLASSPATH
+source /etc/profile
+检查是否成功
+ java -version
