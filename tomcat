@@ -11,3 +11,7 @@ export PATH JAVA_HOME CLASSPATH
 source /etc/profile
 检查是否成功
  java -version
+下载Tomcat
+http://mirrors.hust.edu.cn/apache/tomcat/tomcat-9/v9.0.6/bin/apache-tomcat-9.0.6.tar.gz
+解压
+tar -xzf apache-tomcat-9.0.6.tar.gz
