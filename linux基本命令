@@ -141,8 +141,47 @@ lvm逻辑卷管理
  expr：执行数学表达式
  $?表示上个命令执行结果成功则为0 失败为一个负数值
  
+ if 命令
+  then 命令
+ fi 
+ 如果if 为真
+ 则执行then
+ fi
+ 例子1：
+ if pwd
+ then
+      echo "it worked"
+ fi
  
+例子2：
+ if grep $root /etc/passwd then 
+ ehco "1"
+ ehco "1"
+ ehco "1"
+ if  命令为真
+ 执行 then 后面的命令
+ 命令为假 执行else后命令
+ fi  
+ 例子3
  
+ 14 if grep root /etc/passwd
+ 15 then
+ 16     echo "1"
+ 17 else
+ 18      echo "2"
+ 19 fi
+
+if test 或[] 命令真假影响下面
+为真then
+为假else
+fi
+n1  -eq  n2     n1 =? n2
+n1  -ge  n2     n1 ?>=n2
+n1  -gt  n2     n1 ?<=n2
+n1  -le  n2     n1 ?> n2
+n1  -lt  n2     n1 ?< n2
+n1  -ne  n2     n1 ?!= n2
+
 
 
  
