@@ -140,7 +140,7 @@ lvm逻辑卷管理
  重定向输入<：将文本内容输入到命令当中
  expr：执行数学表达式
  $?表示上个命令执行结果成功则为0 失败为一个负数值
- 
+ 判断语句
  if 命令
   then 命令
  fi 
@@ -182,11 +182,78 @@ n1  -le  n2     n1 ?> n2
 n1  -lt  n2     n1 ?< n2
 n1  -ne  n2     n1 ?!= n2
 
+循环命令
+for  变量  in  list
+do  
+    命令
+done  停止命令
+例1
+！/bin/bash
+for  test  in 1 2 3 4 5 6
+do
+   echo the test is $test
+done
 
-
- 
- 
- 
+例子：利用通配符读取目录
+！/bin/bash
+for file in /home/sys
+do
+   if [-d "$file"]
+   then
+      echo "$file"
+   fi
+done
+for((变量；结束条件；迭代算式))
+例子：
+for((a=1;a<=100;a++))
+do
+  echo "$a"
+done
+while 条件为真
+执行do
+命令
+done
+until 条件为假
+do
+命令
+done
+循环处理文件
+1必须嵌套循环
+2.修改IFS
+!/bin/bash
+IFS.OLD=$IFS
+IFS=$'\n'
+for entry in $(cat /etc/passwd)
+do
+   echo "Values in $entry"
+   IFS=:
+   for value in $entry
+   do 
+     echo "$value"
+   done
+done
+作业：
+查找全部可执行文件
+！/bin/bash
+IFS=:
+for floder in $PATH
+do
+  echo "$floder"
+  for file in $floder/*
+     if [ -x $file ]
+     echo "$file"
+     fi
+ done
+done
+创建多个用户
+1.创建文件
+！/bin/bash
+input = "uer.scv"
+while  IFS =','rend -r userid name
+do
+   echo "add $userid"
+   useradd -c "$name" -m $userid
+done < "$input"
  
  
  
