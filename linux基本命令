@@ -264,6 +264,32 @@ $* 获取所有参数并将保存成一个单词
 $@ 获取所有参数并将保存成一个字符串
 用shirt 移动变量
 
+获得用户输入
+
+基本读取
+read 
+    -p:直接在后面读取内容
+    #！/bin/bash
+    if read -t 5  "entry your age:"age 
+    then
+    day = $[ $age * 365]
+    echo = "$day"
+    else
+   echo"tiajiule"
+   fi
+    -t:延迟几秒
+    #！/bin/bash
+    if read -t 5 -p "entry your age:"age 
+    then
+    day = $[ $age * 365]
+    echo = "$day"
+    else
+   echo"tiajiule"
+   fi
+   -s:隐藏输入
+ 标准文件描述符
+
+
  
  
  
