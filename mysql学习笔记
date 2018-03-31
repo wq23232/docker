@@ -304,8 +304,24 @@ mysql -u -root -p --execute="sql语句" 数据库名 > 文件名
 导入本地文件
 load data infile '数据' into table 表名 
 mysqllimport -u  root -p 数据库  文件名
-mysql 日志
-
+3 mysql常用语句详解
+select 列名 from 表名  where  条件
+                      order by
+                      limit
+3.1 多表连接
+select  列名    from   表1，表2   where
+自然连接
+找到两表相等的列做相等连接
+使用useing子句进行连接
+select 列名   from   表1,表2 useing(列名)
+4.集合操作
+select  ...
+union(all|distinct)
+select...
+4.分组
+group by  : 查询结果后进行排序
+having ：查询结果前进行排序
+where：过滤
 
 
 
