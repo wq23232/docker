@@ -322,6 +322,33 @@ select...
 group by  : 查询结果后进行排序
 having ：查询结果前进行排序
 where：过滤
+四，索引
+索引：是对数据库表中一列或多列的值进行排序的一种结构 。
+唯一索引：不允许其中任一两行具有相同的索引
+主键索引：主键中值都唯一
+聚集索引：表中行的物理顺序与建的逻辑顺序相同
+索引列：基于数据库的列或者多列创建索引
+4.1MySQL索引管理
+4.1.1创建索引
+alter table 表名 add index  name_idx(索引名);
+create index index_(索引名) on 表
+删除索引
+alter table 表名 delete index 索引名_idx
+4.2主键索引
+建立数据库时
+create table test(
+id int(4) not null,
+name char(20).
+primary key ('id'))
+建立表后增加
+create table test(
+id int(4) not null,
+name char(20))
+增加自增主键
+aleter table 表名 change id 列名 数据型号 primary key 
+not null auto_incremit
+4.3创建联合索引
+create index index_name on 表名（字段名（n））
 
 
 
