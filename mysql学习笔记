@@ -349,6 +349,9 @@ aleter table 表名 change id 列名 数据型号 primary key
 not null auto_incremit
 4.3创建联合索引
 create index index_name on 表名（字段名（n））
+建立唯一索引
+alter table 表名 add unique key 字段_uid(字段)
+sql 语句优化思路
 
 
 
