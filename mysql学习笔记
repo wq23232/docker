@@ -352,6 +352,10 @@ create index index_name on 表名（字段名（n））
 建立唯一索引
 alter table 表名 add unique key 字段_uid(字段)
 sql 语句优化思路
+1.查询sql语句执行过程
+explain 语句
+设定id顺序
+mysql存储引擎与日志说明
 
 
 
