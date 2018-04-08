@@ -356,8 +356,35 @@ sql 语句优化思路
 explain 语句
 设定id顺序
 mysql存储引擎与日志说明
-
-
+mysql引擎：mysql 的 文件系统提供 锁定备份和恢复优化
+种类
+InnoDB:支持ACID 食物 支持食物的四种隔离级别
+       支持行及锁以及外键约束：写并发
+       不存储总行数
+       存储在一个文件空间或者多个
+       聚焦索引
+Mysam: 不支持食物
+       支持表级所
+       存储表的行数
+       有三个文件：索引文件，表结构，数据文件
+       非聚焦索引
+查看引擎方法：
+          show variables  like ‘engine’;
+         select table_name enging from
+          information_schema.tables
+          where table_name ="表名"
+          and table_schema = 'world_innodb'
+设置存储引擎
+ 配置文件中修改;
+ default-storage-engine=<storage Engine>
+ set命令设置绘画机制
+ set @@storage-engine=<storage Engine>
+ 在创建数据库时指定：
+ create table t (i int ) engine = <storage Engine>;
+ InnoDB 的存储结构
+ 表空间：mysql 数据库存储的方式
+           表空间中包含数据文件
+  
 
 
 
